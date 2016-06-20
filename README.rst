@@ -15,7 +15,7 @@ Git-based projects
       touch README.rst
       git init
 
-#. Add the `scon-tool-clang`_ as a submodule::
+#. Add the `scons-tool-clangpp`_ as a submodule::
 
       git submodule add git://github.com/ptomulik/scons-tool-clangpp.git site_scons/site_tools/clang++
 
@@ -66,7 +66,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE
 
 .. _LLGM: http://clang.llvm.org/
-.. _scons-tool-clang: https://github.com/ptomulik/scons-tool-clang
+.. _scons-tool-clangpp: https://github.com/ptomulik/scons-tool-clangpp
 .. _clang: http://llvm.org/
 .. _SCons: http://scons.org
 
