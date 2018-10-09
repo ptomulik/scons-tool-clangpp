@@ -19,7 +19,14 @@ This should be used, if your project uses pipenv_:
 
 .. code-block:: shell
 
-      pipenv install scons-tool-clangpp
+      pipenv install --dev scons-tool-clangpp
+
+Alternativelly, you may add this to your ``Pipfile``
+
+.. code-block::
+
+    [dev-packages]
+    scons-tool-clangpp = "*"
 
 
 The tool will be installed as a namespaced package ``sconstool.clangpp``
