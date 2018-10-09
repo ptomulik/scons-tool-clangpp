@@ -1,23 +1,49 @@
 scons-tool-clangpp
 ==================
 
+.. image:: https://travis-ci.org/ptomulik/scons-tool-clangpp.svg?branch=master
+    :target: https://travis-ci.org/ptomulik/scons-tool-clangpp
+    :alt: Travis CI build status
+
 SCons_ support for LLVM_ clang_ C++ compiler.
 
-Usage example
--------------
+Installation
+------------
 
-Git-based projects
+There are few ways to install this tool to your project.
+
+Via pipenv
+^^^^^^^^^^
+
+This should be used, if your project uses pipenv_:
+
+.. code-block:: shell
+
+      pipenv install scons-tool-clangpp
+
+
+The tool will be installed as a namespaced package ``sconstool.clangpp``
+in project's virtual environment.
+
+As a git submodule
 ^^^^^^^^^^^^^^^^^^
 
-#. Create new git repository::
+#. Create new git repository:
+
+   .. code-block:: shell
 
       mkdir /tmp/prj && cd /tmp/prj
       touch README.rst
       git init
 
-#. Add the `scons-tool-clangpp`_ as a submodule::
+#. Add the `scons-tool-clangpp`_ as a submodule:
 
-      git submodule add git://github.com/ptomulik/scons-tool-clangpp.git site_scons/site_tools/clang++
+   .. code-block:: shell
+
+      git submodule add git://github.com/ptomulik/scons-tool-clangpp.git site_scons/site_tools/clangpp
+
+Usage example
+-------------
 
 #. Create simple C file
 
@@ -34,18 +60,20 @@ Git-based projects
    .. code-block:: python
 
       # SConstruct
-      env = Environment(tools = ['default', 'clang++'])
-      print env.subst("using $CXX $CXXVERSION")
+      env = Environment(tools = ['default', 'clangpp'])
+      print(env.subst("using $CC $CCVERSION"))
       env.Program('test.cpp')
 
-#. Try it out::
+#. Try it out:
+
+   .. code-block:: shell
 
       scons
 
 LICENSE
 -------
 
-Copyright (c) 2014 by Pawel Tomulik <ptomulik@meil.pw.edu.pl>
+Copyright (c) 2014-2018 by Pawel Tomulik <ptomulik@meil.pw.edu.pl>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -65,9 +93,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE
 
-.. _LLGM: http://clang.llvm.org/
+.. _LLVM: http://clang.llvm.org/
 .. _scons-tool-clangpp: https://github.com/ptomulik/scons-tool-clangpp
 .. _clang: http://llvm.org/
 .. _SCons: http://scons.org
+.. _pipenv: https://pipenv.readthedocs.io/
 
 .. <!--- vim: set expandtab tabstop=2 shiftwidth=2 syntax=rst: -->
