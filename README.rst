@@ -1,6 +1,10 @@
 scons-tool-clangpp
 ==================
 
+.. image:: https://badge.fury.io/py/scons-tool-clangpp.svg
+    :target: https://badge.fury.io/py/scons-tool-clangpp
+    :alt: PyPi package version
+
 .. image:: https://travis-ci.org/ptomulik/scons-tool-clangpp.svg?branch=master
     :target: https://travis-ci.org/ptomulik/scons-tool-clangpp
     :alt: Travis CI build status
