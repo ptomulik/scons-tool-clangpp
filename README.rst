@@ -21,7 +21,7 @@ From pypi_
 
 .. code-block:: shell
 
-      pip install scons-tool-clangpp scons-tool-loader
+      pip install scons-tool-loader scons-tool-clangpp
 
 or, if your project uses pipenv_:
 
@@ -61,7 +61,7 @@ As a git submodule
 Usage example
 -------------
 
-#. Create simple C file
+#. Create simple C++ file
 
    .. code-block:: cpp
 
