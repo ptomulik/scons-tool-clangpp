@@ -16,25 +16,30 @@ Installation
 
 There are few ways to install this tool to your project.
 
-Via pipenv
+From pypi_
 ^^^^^^^^^^
-
-This should be used, if your project uses pipenv_:
 
 .. code-block:: shell
 
-      pipenv install --dev scons-tool-clangpp
+      pip install scons-tool-clangpp scons-tool-loader
+
+or, if your project uses pipenv_:
+
+.. code-block:: shell
+
+      pipenv install --dev scons-tool-loader scons-tool-clangpp
 
 Alternativelly, you may add this to your ``Pipfile``
 
 .. code-block::
 
     [dev-packages]
+    scons-tool-loader = "*"
     scons-tool-clangpp = "*"
 
 
 The tool will be installed as a namespaced package ``sconstool.clangpp``
-in project's virtual environment.
+in project's virtual environment. You may further use scons-tool-loader_
 
 As a git submodule
 ^^^^^^^^^^^^^^^^^^
@@ -71,8 +76,11 @@ Usage example
    .. code-block:: python
 
       # SConstruct
+      # TODO: uncomment following lines if the tool is installed via pip/pipenv
+      # import sconstool.loader
+      # sconstool.loader.extend_toolpath(transparent=True)
       env = Environment(tools = ['default', 'clangpp'])
-      print(env.subst("using $CC $CCVERSION"))
+      print(env.subst("using $CXX $CXXVERSION"))
       env.Program('test.cpp')
 
 #. Try it out:
@@ -106,8 +114,10 @@ SOFTWARE
 
 .. _LLVM: http://clang.llvm.org/
 .. _scons-tool-clangpp: https://github.com/ptomulik/scons-tool-clangpp
+.. _scons-tool-loader: https://github.com/ptomulik/scons-tool-loader
 .. _clang: http://llvm.org/
 .. _SCons: http://scons.org
 .. _pipenv: https://pipenv.readthedocs.io/
+.. _pypi: https://pypi.org/
 
 .. <!--- vim: set expandtab tabstop=2 shiftwidth=2 syntax=rst: -->
