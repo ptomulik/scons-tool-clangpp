@@ -40,6 +40,7 @@ Alternativelly, you may add this to your ``Pipfile``
 
 The tool will be installed as a namespaced package ``sconstool.clangpp``
 in project's virtual environment. You may further use scons-tool-loader_
+to load the tool.
 
 As a git submodule
 ^^^^^^^^^^^^^^^^^^
